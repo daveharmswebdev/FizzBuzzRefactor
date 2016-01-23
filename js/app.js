@@ -1,13 +1,23 @@
 $(document).ready(function() {
   $('button').click(function() {
-    var i = $('input').val();
+    var i = parseInt($('input').val());
     var a = 1;
-    do {
-      displayNumber(fizzBuzz(a));
-      a+=1;
-    } while (a<=i);
     $('input').val('');
+    console.log(isNaN(i));
+    console.log(decimalTest(i));
+    if (isNaN(i) || decimalTest(i)) {
+      alert('Not an integer. Please enter an integer.');
+    } else {
+      do {
+        displayNumber(fizzBuzz(a));
+        a+=1;
+      } while (a<=i);
+    }
   });
+
+  function decimalTest(arr) {
+     return (arr%1 === 0);
+  }
 
   function displayNumber(arr) {
     $('body').append('<p>'+arr+'</p>');
@@ -24,7 +34,6 @@ $(document).ready(function() {
     } else {
       val = arr;
     }
-    // console.log(arr%3+'-'+arr%5);
     return val;
   };
 
