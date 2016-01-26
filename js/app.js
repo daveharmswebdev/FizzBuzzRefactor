@@ -1,10 +1,10 @@
 $(document).ready(function() {
   $('button').click(function() {
-    var i = parseInt($('input').val());
+    var i = ($('input').val());
     var a = 1;
     $('input').val('');
     console.log(isNaN(i));
-    console.log(i%1+' '+decimalTest(i));
+    console.log(i+' '+i%1+' '+decimalTest(i));
     if (isNaN(i) || decimalTest(i)) {
       alert('Not an integer. Please enter an integer.');
     } else {
